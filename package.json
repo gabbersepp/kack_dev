@@ -1,0 +1,23 @@
+{
+  "name": "kack_dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "11ty": "eleventy",
+    "11ty-serve": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabbersepp/kack_dev.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabbersepp/kack_dev/issues"
+  },
+  "homepage": "https://github.com/gabbersepp/kack_dev#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0"
+  }
+}
