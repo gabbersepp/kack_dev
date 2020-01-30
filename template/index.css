@@ -1,3 +1,17 @@
+@font-face {
+    font-family: "bj";
+    src: url("bj.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Bangers-Regular";
+    src: url("Bangers-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+
 * {
     box-sizing: border-box;
 }
@@ -13,6 +27,7 @@ body {
     padding: 1rem;
     font-size: 12px;
     background-color: grey;
+    font-family: "Bangers-Regular";
 }
 
 .main {
@@ -24,7 +39,6 @@ body {
 .kack-haufen {
     padding-left: 1rem;
     padding-top: 1rem;
-    background-color: grey;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
     width: 200px;
@@ -55,3 +69,87 @@ body {
     
     background-color: white;
 }
+
+.social-media {
+    font-family: "bj";
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotate(2deg);
+    margin:15px;
+    padding:5px 5px;
+    float:right;
+    background:#ddd;
+    border:1px solid #222;
+    box-shadow:3px 3px 0 #222;
+
+    width: 100px;
+    height: 100px;
+    z-index: 100;
+}
+
+.social-media a {
+    color: transparent;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: rotate(2deg);
+    margin:15px;
+    padding:0 5px;
+    float:right;
+    background:#ddd;
+    border:1px solid #222;
+    box-shadow:3px 3px 0 #222;
+
+    width: 90%;
+    height: 50px;
+    z-index: 100;
+    margin-right: 50px;
+
+    font-size: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.icon-wrench:before {
+    content: "";
+  }
+   .icon-phone:before {
+    content: "";
+  }
+  .icon-twitter:before {
+    content: "";
+  }
+ .icon-facebook:before {
+    content: "";
+  }
+  .icon-github-circled:before {
+    content: "";
+  }
+ .icon-envelope-open:before {
+    content: "";
+  }
+
+ .icons *[class*=icon] {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    color: black;
+  }
+
+  .herbert {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 200;
+  }
+
+  .herbert img {
+    width: 200px;
+    height: auto;
+  }
