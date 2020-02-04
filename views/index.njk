@@ -3,18 +3,13 @@ layout: base
 pageTitle: Kack.dev - Drawings
 
 pagination:
-  data: testdata
+  data: collections.allimages
   size: 2
-testdata:
- - /images/1222424643908272128.jpg
- - /images/1222463228053270529.jpg
- - /images/1222582701905104901.jpg
- - /images/1222424643908272128.jpg
 ---
 
     {%- for item in pagination.items %}
         <div class="img-container">
-            <img src="{{ item }}">
+            <img src="{{ item.data.img }}">
         </div>
     {% endfor -%}
 

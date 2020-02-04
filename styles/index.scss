@@ -131,11 +131,15 @@ body {
   transform: translate(-50%) rotate(-2deg);
 }
 
-.caption {
-  font-size: 30px;
+.header {
   position: absolute;
   left: 50%;
   transform: translate(-50%) rotate(-2deg);
+  z-index: 100;
+}
+
+.caption {
+  font-size: 30px;
   
   margin:15px;
   padding:5px 5px;
@@ -144,8 +148,7 @@ body {
   border:1px solid #222;
   box-shadow:3px 3px 0 #222;
 
-  width: 300px;
-  z-index: 100;
+  width: 400px;
 }
 
 .info {

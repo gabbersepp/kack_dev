@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "11ty": "eleventy",
-    "11ty-serve": "eleventy --serve"
+    "11ty-serve": "cross-env SASSWATCH=1 eleventy --serve"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/gabbersepp/kack_dev#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
+    "cross-env": "^7.0.0",
     "fs-extra": "^8.1.0",
     "sass": "^1.25.0"
   }

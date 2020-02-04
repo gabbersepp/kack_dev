@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,8 +20,15 @@
         </span>
     </div>
 
-<div class="caption">
-Für die tägliche Dosis an Scheißcartoons
+<div class="header">
+    <div class="caption">
+    Für die tägliche Dosis an scheiß Entwicklercartoons
+    </div>
+    <div class="tags">
+        {% for t in collections.allTags %}
+             <a href="/{{ t }}/index.html">#{{t}}</a>
+        {% endfor %}
+    </div>
 </div>
 
         <div class="info">
