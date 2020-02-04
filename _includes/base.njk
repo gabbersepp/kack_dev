@@ -44,6 +44,13 @@
         <div class="content">
 
             {{ content | safe }}
+
+                <nav>
+  <ol>
+    {% if pagination.href.previous %}<li><a href="{{ pagination.href.previous }}">&lt;&lt;&lt;</a></li>{% endif %}
+    {% if pagination.href.next %}<li><a href="{{ pagination.href.next }}">&gt;&gt;&gt;</a></li>{% endif %}
+  </ol>
+</nav>
             
         </div>
         <div class="herbert"><img src="/assets/herbert.png"></div>
