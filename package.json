@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/gabbersepp/kack_dev#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0"
+    "@11ty/eleventy": "^0.10.0",
+    "fs-extra": "^8.1.0",
+    "sass": "^1.25.0"
   }
 }

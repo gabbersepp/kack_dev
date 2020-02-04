@@ -1,0 +1,251 @@
+@font-face {
+    font-family: "bj";
+    src: url("/assets/bj.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Bangers-Regular";
+    src: url("/assets/Bangers-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    padding: 1rem;
+    font-size: 12px;
+    background-color: grey;
+    font-family: "Bangers-Regular";
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    position: relative;
+    width: 1060px;
+    height: 500px;
+}
+
+.kack-haufen1 {
+    padding-left: 1rem;
+    padding-top: 1rem;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    width: 200px;
+    height: 400px;
+    position: absolute;
+    top: -200px;
+    left: 0;
+    z-index: 100;
+}
+
+.kack-haufen {
+  padding-left: 1rem;
+  padding-top: 1rem;
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.kack-haufen img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0px;
+}
+
+.content {
+    position: absolute;
+    border: 2px solid black;
+    width: 100%;
+    height: 100%;
+    
+    border-width: 3px 4px 3px 5px;
+    border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
+    transform: rotate(2deg);
+    
+    background-color: white;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.img-container {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+
+	margin: 0 12px 12px 0;
+	padding: 4px;
+	background-color: #fafafa;
+	box-shadow: 2px 2px 6px #111;
+  border-radius: 2px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-container img {
+  width: 180px;
+  height: 180px;
+}
+
+.img-container:nth-child(2n+1) {
+	transform: rotate(-2deg);
+}
+.img-container:nth-child(3n+2) {
+	transform: rotate(1deg);
+}
+.img-container:nth-child(5n+3) {
+	transform: rotate(-3deg);
+}
+.img-container:nth-child(7n+5) {
+	transform: rotate(6deg);
+}
+.img-container:nth-child(11n+7) {
+	transform: rotate(4deg);
+}
+
+.caption-center {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%) rotate(-2deg);
+}
+
+.caption {
+  font-size: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%) rotate(-2deg);
+  
+  margin:15px;
+  padding:5px 5px;
+  float:right;
+  background:#ddd;
+  border:1px solid #222;
+  box-shadow:3px 3px 0 #222;
+
+  width: 300px;
+  z-index: 100;
+}
+
+.info {
+  font-size: 30px;
+  position: absolute;
+  right: 0;
+  top: 120px;
+  transform: rotate(-2deg);
+  
+  margin:15px;
+  padding:5px 5px;
+  float:right;
+  background:#ddd;
+  border:1px solid #222;
+  box-shadow:3px 3px 0 #222;
+
+  width: 200px;
+  z-index: 100;
+}
+
+.social-media {
+    font-family: "bj";
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotate(2deg);
+    margin:15px;
+    padding:5px 5px;
+    float:right;
+    background:#ddd;
+    border:1px solid #222;
+    box-shadow:3px 3px 0 #222;
+
+    width: 100px;
+    height: 100px;
+    z-index: 100;
+}
+
+.social-media a {
+    color: transparent;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: rotate(2deg);
+    margin:15px;
+    padding:0 5px;
+    float:right;
+    background:#ddd;
+    border:1px solid #222;
+    box-shadow:3px 3px 0 #222;
+
+    width: 90%;
+    height: 50px;
+    z-index: 100;
+    margin-right: 50px;
+
+    font-size: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.icon-wrench:before {
+    content: "";
+  }
+   .icon-phone:before {
+    content: "";
+  }
+  .icon-twitter:before {
+    content: "";
+  }
+ .icon-facebook:before {
+    content: "";
+  }
+  .icon-github-circled:before {
+    content: "";
+  }
+ .icon-envelope-open:before {
+    content: "";
+  }
+
+ .icons *[class*=icon] {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    color: black;
+  }
+
+  .herbert {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 200;
+  }
+
+  .herbert img {
+    width: 200px;
+    height: auto;
+  }
