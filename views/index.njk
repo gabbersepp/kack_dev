@@ -9,7 +9,8 @@ pagination:
 
     {%- for item in pagination.items %}
         <div class="img-container">
-            <img src="{{ item.data.img }}">
+            {% set imgUrl = item.data.img %}
+            {% include "img.njk" %}
         </div>
     {% endfor -%}
 

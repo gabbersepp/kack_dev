@@ -15,6 +15,13 @@
     </head>
 <body>
 
+<div id="modal">
+    <div class="close">
+    Schließen
+    </div>
+    <img src="">
+</div>
+
 <div class="main">
     <div class="kack-haufen"><img src="/assets/kack.png"></div>
     <div class="social-media">
@@ -57,5 +64,18 @@
     
         <footer><div>Josef Biehler</div><div>contact@kack.dev</div></footer>
     </div>
+
+    <script>
+        var imgs = document.querySelectorAll("img[class='clickable']");
+        [...imgs].forEach(x =>x.addEventListener("click", () => {
+            
+            document.querySelector("#modal img").src = x.src;
+            document.querySelector("#modal").classList.add("visible")
+        }))
+ 
+        document.querySelector("#modal").addEventListener("click", () => {
+            document.querySelector("#modal").classList.remove("visible")
+        });
+    </script>
 </body>
 </html>
