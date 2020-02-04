@@ -1,0 +1,14 @@
+---
+layout: base
+pageTitle: Kack.dev - Drawings - Cars
+
+pagination:
+  data: collections.test
+  size: 2
+---
+
+    {%- for item in pagination.items %}
+        <div class="img-container">
+            <img src="{{ item.data.img }}">
+        </div>
+    {% endfor -%}
