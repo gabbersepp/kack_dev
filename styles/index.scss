@@ -23,10 +23,14 @@ body, html {
     width: 100%;
 }
 
-body {
+.body {
+    width: 100%;
+    height: 100%;
+    min-width: 1400px;
+    min-height: 800px;
     padding: 1rem;
     font-size: 12px;
-    background-color: grey;
+    background-color: #b9d8ff;//#f5faff;
     font-family: "Bangers-Regular";
 
     display: flex;
@@ -36,8 +40,8 @@ body {
 
 .main {
     position: relative;
-    width: 1060px;
-    height: 500px;
+    min-width: 1060px;
+    min-height: 500px;
 }
 
 .kack-haufen1 {
@@ -69,6 +73,7 @@ body {
 }
 
 .content {
+  filter: drop-shadow(2px 4px 6px black);
     position: absolute;
     border: 2px solid black;
     width: 100%;
@@ -78,7 +83,7 @@ body {
     border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
     transform: rotate(2deg);
     
-    background-color: white;
+    background-color: #e17168;
 
     display: flex;
     flex-wrap: wrap;
@@ -89,13 +94,14 @@ body {
 }
 
 .img-container {
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   overflow: hidden;
+  cursor: pointer;
 
 	margin: 0 12px 12px 0;
 	padding: 4px;
-	background-color: #fafafa;
+	background-color: #e2b309;
 	box-shadow: 2px 2px 6px #111;
   border-radius: 2px;
   
@@ -105,8 +111,9 @@ body {
 }
 
 .img-container img {
-  width: 180px;
-  height: 180px;
+  width: 380px;
+  height: 380px;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 .img-container:nth-child(2n+1) {
@@ -133,12 +140,22 @@ body {
 
 .header {
   position: absolute;
-  left: 50%;
-  transform: translate(-50%) rotate(-2deg);
+  //left: 50%;
+  transform: translate(-50%) rotate(-50deg);
   z-index: 100;
 
   .tags {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    a {
+      color: black;
+      text-decoration: none;
+
+      transition: color 0.5s ease-in-out;
+
+      &:hover {
+        color: blue;
+      }
+    }
   }
 }
 
@@ -196,18 +213,22 @@ body {
 .info {
   font-size: 30px;
   position: absolute;
-  right: 0;
-  top: 120px;
-  transform: rotate(-2deg);
-  
-  margin:15px;
-  padding:5px 5px;
-  float:right;
-  background:#ddd;
-  border:1px solid #222;
-  box-shadow:3px 3px 0 #222;
+  width: 700px;
+  top: 10px;
 
-  width: 200px;
+  .text {
+    transform: rotate(-2deg);
+  
+    //margin:15px;
+    padding:5px 5px;
+    float:left;
+    width: 500px;
+    background:#ddd;
+    border:1px solid #222;
+    box-shadow:3px 3px 0 #222;
+  }
+
+
   z-index: 100;
 }
 
@@ -281,18 +302,25 @@ footer {
     width: 30px;
     margin-right: 10px;
     color: black;
+    transition: color 0.5s ease-in-out;
+
+    &:hover {
+      color: blue;
+    }
   }
 
   .herbert {
-    position: absolute;
+    /*position: absolute;
     bottom: 0;
     right: 0;
-    z-index: 200;
+    z-index: 200;*/
+
   }
 
   .herbert img {
-    width: 200px;
+    width: 120px;
     height: auto;
+    filter: drop-shadow(2px 4px 6px black);//grayscale(1);
   }
 
   nav {

@@ -11,7 +11,7 @@ module.exports = function(eleventyConfig) {
 
   var tags = [];
 
-  eleventyConfig.addCollection("allimages", function(collection) {
+  eleventyConfig.addCollection("drawnimages", function(collection) {
     var allItems =  collection.getAll();
     allItems.map(x => x.data.tags).forEach(x => {
       if (x) {
@@ -25,8 +25,31 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("allTags", () => {
     var obj = {};
     tags.forEach(t => obj[t] = true);
-    return Object.keys(obj).filter(x => x.toLowerCase() !== "allimages");
+    return Object.keys(obj).filter(x => x.toLowerCase() !== "drawnimages");
   });
+
+  eleventyConfig.addNunjucksTag("log", function(nunjucksEngine) {
+    return new function() {
+      this.tags = ["log"];
+
+      this.parse = function(parser, nodes, lexer) {
+        var tok = parser.nextToken();
+
+        var args = parser.parseSignature(null, true);
+        parser.advanceAfterBlockEnd(tok.value);
+
+        return new nodes.CallExtensionAsync(this, "run", args);
+      };
+
+      this.run = function(context, myStringArg, callback) {
+        let ret = new nunjucksEngine.runtime.SafeString(
+          //console.log(myStringArg)
+        );
+        callback(null, ret);
+      };
+    }();
+  });
+
 
   eleventyConfig.addPassthroughCopy("./assets");
   eleventyConfig.addPassthroughCopy("./images");

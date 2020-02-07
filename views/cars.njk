@@ -4,11 +4,12 @@ pageTitle: Kack.dev - Drawings - Cars
 
 pagination:
   data: collections.cars
-  size: 2
+  size: 1
 ---
 
     {%- for item in pagination.items %}
         <div class="img-container">
-            <img src="{{ item.data.img }}">
+            {% set imgUrl = item.data.img %}
+            {% include "img.njk" %}
         </div>
     {% endfor -%}
