@@ -25,30 +25,15 @@
 </div>
 
 
-        <div class="info">
+       <!-- <div class="info">
             <div class="text">
                 Das ist Herbert. Herbert ist ein Software-entwickler. Wer hätte das gedacht.
             </div>
-<div class="herbert"><img src="/assets/herbert.png"></div>             
+        
         </div>
-
-       
-
-    <!--<div class="kack-haufen"><img src="/assets/kack.png"></div>-->
-
-<div class="main">
-
-    <div class="social-media">
-        <span class="icons">
-            <a href="https://www.facebook.com/jodekadev" target="_blank"><i class="icon-facebook"></i></a>
-            <a href="https://twitter.com/JosefBiehler" target="_blank"><i class="icon-twitter"></i></a>
-            <a href="https://github.com/gabbersepp/" target="_blank"><i class="icon-github-circled"></i></a>
-            <a href="mailto:contact@kack.dev"><i class="icon-envelope-open"></i></a>
-        </span>
-    </div>
-
-<div class="header">
-    <div class="caption">
+-->
+<div class="info">
+           <div class="caption">
     Für die tägliche Dosis an scheiß Entwicklercartoons
     </div>
     <div class="tags">
@@ -57,7 +42,30 @@
         {% endfor %}
     </div>
 </div>
+    <!--<div class="kack-haufen"><img src="/assets/kack.png"></div>-->
 
+<div class="main">
+<div class="herbert"><img src="/assets/herbert.png"></div>     
+    <div class="social-media">
+        <span class="icons">
+            <a href="https://www.facebook.com/jodekadev" target="_blank"><i class="icon-facebook"></i></a>
+            <a href="https://twitter.com/JosefBiehler" target="_blank"><i class="icon-twitter"></i></a>
+            <a href="https://github.com/gabbersepp/" target="_blank"><i class="icon-github-circled"></i></a>
+            <a href="mailto:contact@kack.dev"><i class="icon-envelope-open"></i></a>
+        </span>
+    </div>
+<!--
+<div class="header">
+    	<div class="caption">
+    Für die tägliche Dosis an scheiß Entwicklercartoons
+    </div>
+    <div class="tags">
+        {% for t in collections.allTags %}
+             <a href="/{{ t }}/index.html">#{{t}}</a>
+        {% endfor %}
+    </div>
+</div>
+-->
 
         <div class="content">
 
@@ -71,8 +79,9 @@
 </nav>
             
         </div>
-    
+    <!--
         <footer><div>Josef Biehler</div><div>contact@kack.dev</div></footer>
+        -->
     </div>
 
     <script>
