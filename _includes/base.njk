@@ -15,8 +15,6 @@
     </head>
 <body>
 
-<div class="body">
-
 <div id="modal">
     <div class="close">
     Schließen
@@ -24,28 +22,33 @@
     <img src="">
 </div>
 
+<div class="body">
 
-       <!-- <div class="info">
+    <header>
+        <div class="main-caption">
             <div class="text">
-                Das ist Herbert. Herbert ist ein Software-entwickler. Wer hätte das gedacht.
+                Das ist Herbert. Herbert ist ein Softwareentwickler. Wer hätte das gedacht.
             </div>
-        
+            <div class="herbert"><img src="/assets/herbert.png"></div> 
         </div>
--->
-<div class="info">
-           <div class="caption">
-    Für die tägliche Dosis an scheiß Entwicklercartoons
-    </div>
-    <div class="tags">
-        {% for t in collections.allTags %}
-             <a href="/{{ t }}/index.html">#{{t}}</a>
-        {% endfor %}
-    </div>
-</div>
-    <!--<div class="kack-haufen"><img src="/assets/kack.png"></div>-->
+        <div class="sub-caption">
+           <div class="text">
+            Für die tägliche Dosis an scheiß Entwicklercartoons
+            </div>
+            <div class="tags">
+                {% for t in collections.allTags %}
+                    <a href="/{{ t }}/index.html">#{{t}}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </header>
 
-<div class="main">
-<div class="herbert"><img src="/assets/herbert.png"></div>     
+
+
+
+
+
+<div class="main">    
     <div class="social-media">
         <span class="icons">
             <a href="https://www.facebook.com/jodekadev" target="_blank"><i class="icon-facebook"></i></a>
@@ -54,18 +57,6 @@
             <a href="mailto:contact@kack.dev"><i class="icon-envelope-open"></i></a>
         </span>
     </div>
-<!--
-<div class="header">
-    	<div class="caption">
-    Für die tägliche Dosis an scheiß Entwicklercartoons
-    </div>
-    <div class="tags">
-        {% for t in collections.allTags %}
-             <a href="/{{ t }}/index.html">#{{t}}</a>
-        {% endfor %}
-    </div>
-</div>
--->
 
         <div class="content">
 
@@ -73,8 +64,8 @@
 
                 <nav>
   <ol>
-    {% if pagination.href.previous %}<li><a href="{{ pagination.href.previous }}">&lt;&lt;&lt;</a></li>{% endif %}
-    {% if pagination.href.next %}<li><a href="{{ pagination.href.next }}">&gt;&gt;&gt;</a></li>{% endif %}
+    {% if pagination.href.previous %}<li><a href="{{ pagination.href.previous }}">&lt;</a></li>{% endif %}
+    {% if pagination.href.next %}<li><a href="{{ pagination.href.next }}">&gt;</a></li>{% endif %}
   </ol>
 </nav>
             

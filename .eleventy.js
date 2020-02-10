@@ -44,6 +44,7 @@ module.exports = function(eleventyConfig) {
       this.run = function(context, myStringArg, callback) {
         let ret = new nunjucksEngine.runtime.SafeString(
           //console.log(myStringArg)
+          ""
         );
         callback(null, ret);
       };

@@ -13,4 +13,4 @@ wenn drei spalten cartoon da ist, verschwindet der hintergrund bzw ist nur teilw
 
 fontcombination suchen zu der fint die ich nutze
 
-hintergrund statt blau besser nutzen. evtl paopier oder figuren siehe https://kplx.de/
+[x] hintergrund statt blau besser nutzen. evtl paopier oder figuren siehe https://kplx.de/

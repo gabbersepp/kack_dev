@@ -26,16 +26,14 @@ body, html {
 .body {
     width: 100%;
     height: 100%;
-    //min-width: 1400px;
-    //min-height: 800px;
     padding: 1rem;
     font-size: 12px;
-    //background-color: #b9d8ff;//#f5faff;
     font-family: "Bangers-Regular";
 
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
     &::after {
       
@@ -59,34 +57,6 @@ body, html {
     min-height: 500px;
 }
 
-.kack-haufen1 {
-    padding-left: 1rem;
-    padding-top: 1rem;
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-    width: 200px;
-    height: 400px;
-    position: absolute;
-    top: -200px;
-    left: 0;
-    z-index: 100;
-}
-
-.kack-haufen {
-  padding-left: 1rem;
-  padding-top: 1rem;
-  position: absolute;
-  left: 0;
-  z-index: 100;
-}
-
-.kack-haufen img {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 0px;
-}
-
 .content {
   filter: drop-shadow(2px 4px 6px black);
     position: absolute;
@@ -104,8 +74,6 @@ body, html {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
-
 }
 
 .img-container {
@@ -123,56 +91,36 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  img {
+    width: 380px;
+    height: 380px;
+    filter: drop-shadow(2px 4px 6px black);
+  }
+
+  &:nth-child(2n+1) {
+    transform: rotate(-2deg);
+  }
+  &:nth-child(3n+2) {
+    transform: rotate(1deg);
+  }
+  &:nth-child(5n+3) {
+    transform: rotate(-3deg);
+  }
+  &:nth-child(7n+5) {
+    transform: rotate(6deg);
+  }
+  &:nth-child(11n+7) {
+    transform: rotate(4deg);
+  }
 }
 
-.img-container img {
-  width: 380px;
-  height: 380px;
-  filter: drop-shadow(2px 4px 6px black);
-}
-
-.img-container:nth-child(2n+1) {
-	transform: rotate(-2deg);
-}
-.img-container:nth-child(3n+2) {
-	transform: rotate(1deg);
-}
-.img-container:nth-child(5n+3) {
-	transform: rotate(-3deg);
-}
-.img-container:nth-child(7n+5) {
-	transform: rotate(6deg);
-}
-.img-container:nth-child(11n+7) {
-	transform: rotate(4deg);
-}
-
-.caption-center {
+// center a absolute üpositioned element
+/*.caption-center {
   position: absolute;
   left: 50%;
   transform: translate(-50%) rotate(-2deg);
-}
-
-.header {
-  position: absolute;
-  //left: 50%;
-  transform: translate(-50%) rotate(-50deg);
-  z-index: 100;
-
-  .tags {
-    font-size: 1.5rem;
-    a {
-      color: black;
-      text-decoration: none;
-
-      transition: color 0.5s ease-in-out;
-
-      &:hover {
-        color: blue;
-      }
-    }
-  }
-}
+}*/
 
 #modal {
   display: none;
@@ -212,59 +160,66 @@ body, html {
   }
 }
 
-.caption {
-  font-size: 30px;
-  
-  margin:15px;
-  padding:5px 5px;
-  float:right;
-  background:#ddd;
-  border:1px solid #222;
-  box-shadow:3px 3px 0 #222;
+header {
+  position: relative;
+  z-index: 400;
 
-  width: 400px;
-}
-
-.info {
-
-  .caption {
-    font-size: 40px;
-    width: 800px;
-    padding: 20px;
-  }
-  font-size: 40px;
-  position: absolute;
-  //width: 700px;
-  top: 10px;
-
-  .tags {
-    font-size: 1.5rem;
-    a {
-      color: black;
-      text-decoration: none;
-
-      transition: color 0.5s ease-in-out;
-
-      &:hover {
-        color: blue;
-      }
-    }
-  }
-
-  .text {
-    transform: rotate(-2deg);
-  
-    //margin:15px;
+  .main-caption {
+    font-size: 30px;
+    margin:15px auto 15px auto;
     padding:5px 5px;
-    //float:left;
-    width: 500px;
     background:#ddd;
     border:1px solid #222;
     box-shadow:3px 3px 0 #222;
+    width: 80%;
+    position: relative;
+
+    .herbert {
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 300;
+    }
+
+    .herbert img {
+      width: auto;
+      height: 140px;
+    }
+
+    .text {
+      font-size: 40px;
+      width: calc(100% - 130px);
+      padding: 20px;
+    }
   }
 
-
-  z-index: 100;
+  .sub-caption {
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    transform: rotate(-45deg) translateX(-250px) translateY(100px);
+    width: 250px;
+  
+    .tags {
+      margin-top: 10px;
+      a {
+        color: black;
+        text-decoration: none;
+        transition: color 0.5s ease-in-out;
+  
+        &:hover {
+          color: blue;
+        }
+      }
+    }
+  
+    .text {
+      padding:5px 5px;
+      background:#ddd;
+      border:1px solid #222;
+      box-shadow:3px 3px 0 #222;
+    }
+  }
 }
 
 .social-media {
@@ -342,23 +297,6 @@ footer {
     &:hover {
       color: blue;
     }
-  }
-
-  .herbert {
-    /*position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 200;*/
-    position: absolute;
-    right: -5px;
-    top: -130px;
-    z-index: 300;
-  }
-
-  .herbert img {
-    width: 130px;
-    height: auto;
-    //filter: drop-shadow(2px 4px 6px black);//grayscale(1);
   }
 
   nav {
