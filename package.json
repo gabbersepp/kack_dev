@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "11ty": "eleventy",
-    "11ty-serve": "cross-env DEBUG=* SASSWATCH=1 eleventy --serve"
+    "11ty-serve": "cross-env SASSWATCH=1 eleventy --serve"
   },
   "repository": {
     "type": "git",

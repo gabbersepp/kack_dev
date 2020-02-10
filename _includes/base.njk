@@ -33,7 +33,7 @@
         </div>
         <div class="sub-caption">
            <div class="text">
-            Für die tägliche Dosis an scheiß Entwicklercartoons
+            Für die tägliche Dosis an <br>scheiß<br> Entwicklercartoons
             </div>
             <div class="tags">
                 {% for t in collections.allTags %}
@@ -59,15 +59,42 @@
     </div>
 
         <div class="content">
+        <div class="cat"><img src="/assets/catkackdev.png"></div>
 
             {{ content | safe }}
 
-                <nav>
-  <ol>
-    {% if pagination.href.previous %}<li><a href="{{ pagination.href.previous }}">&lt;</a></li>{% endif %}
-    {% if pagination.href.next %}<li><a href="{{ pagination.href.next }}">&gt;</a></li>{% endif %}
-  </ol>
-</nav>
+            <nav>
+                
+                {% if pagination.href.previous %}
+                    <span><a href="{{ pagination.href.previous }}">&lt;</a></span>
+                {% endif %}
+                {% set printBeginningDot = true %}
+                {% set printEndingDot = true %}
+                
+                {% for pageEntry in pagination.pages %}
+                    
+                            {% if (loop.index0 == 0 or loop.index0 == pagination.pages.length - 1) 
+                                or pagination.hrefs[loop.index0 + 1] == page.url
+                                or pagination.hrefs[loop.index0 - 1] == page.url %}
+                                <span class="pageinate"><a href="{{ pagination.hrefs[loop.index0] }}">{{ loop.index }}</a></span>
+                            {% else %}
+                                {% if pagination.hrefs[loop.index0 + 2] == page.url and printBeginningDot == true %}
+                                    {% set printBeginningDot = false %}
+                                    <span class="dot">...</span>
+                                {% elif pagination.hrefs[loop.index0] == page.url %}
+                                    <span class="current"><span>{{ loop.index }}</span></span>
+                                {% elif pagination.hrefs[loop.index0 - 2] == page.url and printEndingDot == true %}
+                                     {% set printEndingDot = false %}
+                                     <span class="dot">...</span>
+                                {% endif %}
+                            {% endif %}
+                    
+                {% endfor %}
+                {% if pagination.href.next %}
+                    <span><a href="{{ pagination.href.next }}">&gt;</a></span>
+                {% endif %}
+
+            </nav>
             
         </div>
     <!--
