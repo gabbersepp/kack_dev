@@ -9,23 +9,12 @@ module.exports = function(eleventyConfig) {
       return markdown.render(value);
   });
 
-  var tags = [];
-
-  eleventyConfig.addCollection("drawnimages", function(collection) {
-    var allItems =  collection.getAll();
-    allItems.map(x => x.data.tags).forEach(x => {
-      if (x) {
-        tags = [...tags, ...x]
-      }
-    });
-
-    return allItems;
-  });
-
-  eleventyConfig.addCollection("allTags", () => {
+  eleventyConfig.addCollection("allTags", (collection) => {
+    var tags = collection.items.map(x => x.data)
+      .filter(x => x.tags).map(x => x.tags).reduce((x, y) => [...x, ...y]);
     var obj = {};
     tags.forEach(t => obj[t] = true);
-    return Object.keys(obj).filter(x => x.toLowerCase() !== "drawnimages");
+    return Object.keys(obj);
   });
 
   eleventyConfig.addNunjucksTag("log", function(nunjucksEngine) {
@@ -42,8 +31,8 @@ module.exports = function(eleventyConfig) {
       };
 
       this.run = function(context, myStringArg, callback) {
+        //console.log(myStringArg)
         let ret = new nunjucksEngine.runtime.SafeString(
-          //console.log(myStringArg)
           ""
         );
         callback(null, ret);
