@@ -26,6 +26,7 @@ body, html {
 .body {
     width: 100%;
     min-width: 1368px;
+    min-height: 700px;
     height: 100%;
     padding: 1rem;
     font-size: 12px;
@@ -49,6 +50,9 @@ body, html {
       position: absolute;
       z-index: -1;  
       content: "";
+      min-width: 1368px;
+      height: 100%;
+      min-height: 700px;
     }
 }
 
@@ -217,7 +221,11 @@ header {
     .text {
       font-size: 40px;
       width: calc(100% - 130px);
-      padding: 20px;
+      padding: 20px 20px 5px 20px;
+    }
+
+    .impressum {
+      font-size: 15px;
     }
   }
 
