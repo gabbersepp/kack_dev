@@ -23,6 +23,6 @@
     "cross-env": "^7.0.0",
     "fs-extra": "^8.1.0",
     "sass": "^1.25.0",
-    "tweet-downloader": "1.0.0"
+    "tweet-downloader": "1.0.1"
   }
 }
