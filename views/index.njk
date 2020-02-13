@@ -8,9 +8,7 @@ pagination:
 ---
 {% log pagination.items %}
     {%- for item in pagination.items %}
-        <div class="img-container">
-            {% set imgUrl = item.data.img %}
-            {% include "img.njk" %}
-        </div>
+        {% set data = item.data %}
+        {% include "img.njk" %}
     {% endfor -%}
 

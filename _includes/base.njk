@@ -74,8 +74,9 @@
 
         <div class="content">
         <div class="cat"><img src="/assets/catkackdev.png"></div>
-
-            <div class="bg-1"></div>
+        
+            <div class="bg-1">
+            </div>
 
             {{ content | safe }}
 
@@ -90,7 +91,9 @@
                 
                 {% for pageEntry in pagination.pages %}
                     
-                            {% if (loop.index0 == 0 or loop.index0 == pagination.pages.length - 1) 
+                            {% if pagination.hrefs[loop.index0] == page.url %}
+                                    <span class="current"><span>{{ loop.index }}</span></span>
+                            {% elif (loop.index0 == 0 or loop.index0 == pagination.pages.length - 1) 
                                 or pagination.hrefs[loop.index0 + 1] == page.url
                                 or pagination.hrefs[loop.index0 - 1] == page.url %}
                                 <span class="pageinate"><a href="{{ pagination.hrefs[loop.index0] }}">{{ loop.index }}</a></span>
@@ -98,8 +101,6 @@
                                 {% if pagination.hrefs[loop.index0 + 2] == page.url and printBeginningDot == true %}
                                     {% set printBeginningDot = false %}
                                     <span class="dot">...</span>
-                                {% elif pagination.hrefs[loop.index0] == page.url %}
-                                    <span class="current"><span>{{ loop.index }}</span></span>
                                 {% elif pagination.hrefs[loop.index0 - 2] == page.url and printEndingDot == true %}
                                      {% set printEndingDot = false %}
                                      <span class="dot">...</span>

@@ -14,3 +14,7 @@
 fontcombination suchen zu der fint die ich nutze
 
 [x] hintergrund statt blau besser nutzen. evtl paopier oder figuren siehe https://kplx.de/
+
+---- neu 13.02
+[x] die aktive page hervorheben (z.b. stricht unter normal großer schrift)
+katze sollte komplett weiß sein, damit der header nicht durchscheint

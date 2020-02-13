@@ -10,6 +10,13 @@
     src: url("/assets/Bangers-Regular.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
+  }  
+  
+  @font-face {
+    font-family: "Gorditas-Regular";
+    src: url("/assets/Gorditas-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
   }
 
 * {
@@ -71,13 +78,15 @@ body, html {
   }
   .bg-1 {
     background-image: url("/assets/kackdevcatmain.png");
-    background-size: cover;
+    background-size: contain;
     position: absolute;
     left: 0;
     bottom: 0;
     width: 250px;
-    height: 250px;
+    height: 100%;
     opacity: 0.5;
+    background-repeat: no-repeat;
+    background-position: bottom;
   }
   .bg-2 {
     background-image: url("/assets/showkackdev.png");
@@ -106,6 +115,18 @@ body, html {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+.img-description {
+  font-size: 20px;
+  font-family: "Gorditas-Regular";
+  position: absolute;
+  left: 10px;
+  top: 50px;
+  width: 300px;
+  max-height: 300px;
+  overflow: hidden;
+  text-align: end;
 }
 
 .img-container {
@@ -337,7 +358,7 @@ footer {
 
   nav {
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
 
     a {
       color: black;
@@ -351,12 +372,12 @@ footer {
     }
 
     span {
-      font-size: 25pt;
+      font-size: 25px;
     }
 
     .current {
       span {
-        font-size: 20pt;
+        font-size: 30px;
         text-decoration: underline;
         vertical-align: middle;
       }
