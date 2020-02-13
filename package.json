@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "11ty": "eleventy",
-    "11ty-serve": "cross-env SASSWATCH=1 eleventy --serve"
+    "11ty": "npm run twitter && eleventy",
+    "11ty-serve": "npm run twitter && cross-env SASSWATCH=1 eleventy --serve",
+    "twitter": "node build/twitter.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "@11ty/eleventy": "^0.10.0",
     "cross-env": "^7.0.0",
     "fs-extra": "^8.1.0",
-    "sass": "^1.25.0"
+    "sass": "^1.25.0",
+    "tweet-downloader": "1.0.0"
   }
 }

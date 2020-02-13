@@ -7,7 +7,7 @@ pagination:
   size: 1
 ---
 
-    {%- for item in pagination.items %}
+    {%- for item in pagination.items  | reverse %}
         <div class="img-container">
             {% set imgUrl = item.data.img %}
             {% include "img.njk" %}
