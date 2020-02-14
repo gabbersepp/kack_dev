@@ -13,8 +13,9 @@ module.exports = function(eleventyConfig) {
     var tags = collection.items.map(x => x.data)
       .filter(x => x.tags).map(x => x.tags).reduce((x, y) => [...x, ...y]);
     var obj = {};
-    tags.forEach(t => obj[t] = true);
-    return Object.keys(obj);
+    tags.forEach(t => obj[t] = (obj[t] || 0) + 1);
+    const tagsSortedByUsage = Object.keys(obj).sort((a, b) => obj[b] - obj[a]);
+    return tagsSortedByUsage.splice(0, 4);
   });
 
   eleventyConfig.addNunjucksTag("log", function(nunjucksEngine) {

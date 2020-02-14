@@ -48,7 +48,7 @@
                     {% if 'alles' in t %}
                         {% set t = '' %}
                     {% else %}
-                        {% set t = t + '/' %}
+                        {% set t = 'tags/' + t + '/' %}
                     {% endif %}
                     
                     <a href="/{{ t }}index.html">#{{display}}</a><br>
