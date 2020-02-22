@@ -3,6 +3,7 @@ const fs = require('fs-extra');
 const path = require('path');
 // create dist folder
 function transform(scssPath, cssPath) {
+    fs.ensureDirSync(path.dirname(cssPath))
     console.log(`Watching ${path.dirname(scssPath)}...`);
     //Encapsulate rendered css from scssPath into watchResult variable
     const watchResult = sass.renderSync({file: scssPath});

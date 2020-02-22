@@ -14,6 +14,20 @@ function ensureHashTagPage(tag) {
     }
 }
 
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+    return [year, day, month].join('-');
+}
+
 async function twitter() {
     let tweets = tweetDownloader.readTweets("./tweets.json");
     let maxId = BigInt(1);
@@ -40,6 +54,7 @@ async function twitter() {
 `---
 img: /${tweet.localPath}
 imgDescription: ${tweet.fullText.replace(/\r/g, " ").replace(/\n/g , "")}
+date: ${formatDate(new Date(parseInt((BigInt(tweet.id) / BigInt(100000)).toString())))}
 tags: 
     - alles
 ${hashTagStr}
