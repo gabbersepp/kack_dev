@@ -18,6 +18,25 @@ module.exports = function(eleventyConfig) {
     return tagsSortedByUsage.splice(0, 4);
   });
 
+  eleventyConfig.addNunjucksFilter("cleartweet", function(value) {
+    if (!value) {
+      return value;
+    }
+
+    // replace hashtags
+    value = value.replace(/#[0-9a-z]+/ig, "");
+    // replace links
+    value = value.replace(/https?:\/\/[^\s$]+/gi, "")
+    // tweets contain U+2800 https://www.utf8-chartable.de/unicode-utf8-table.pl?start=10240&number=128
+    // no idea why
+    value = value.replace(/\s+|\u2800+/g, " ")
+
+    var map = {
+      amp: '&', lt: '<', le: '≤', gt: '>', ge: '≥', quot: '"', '#039': "'"
+    }
+    return value.replace(/&([^;]+);/g, (m, c) => map[c]|| '')
+  })
+
   eleventyConfig.addNunjucksTag("log", function(nunjucksEngine) {
     return new function() {
       this.tags = ["log"];

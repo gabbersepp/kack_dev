@@ -18,7 +18,7 @@ async function twitter() {
     let tweets = tweetDownloader.readTweets("./tweets.json");
     let maxId = BigInt(1);
     if (tweets.length > 0) {
-        maxId = tweets.map(x => x.id).reduce((x, y) => Math.max(x, y));
+        maxId = tweets.map(x => x.id).reduce((x, y) => x > y ? x : y);
     }
     
     tweets = await tweetDownloader.getLatestEarningsPost(maxId.toString(), "KackDev", "./images",
@@ -28,19 +28,24 @@ async function twitter() {
 
     // create .md files
     tweets.forEach(tweet => {
+        if (!tweet.localPath) {
+            return;
+        }
         tweet.hashtags.forEach(tag => ensureHashTagPage(tag));
 
-        const hashTagStr = tweet.hashtags.map(x => `    - ${x}`).reduce((x, y) => `${x}\r\n${y}`);
+        const hashTags = tweet.hashtags.map(x => `    - ${x}`);
+        const hashTagStr = hashTags.length > 0 ? hashTags.reduce((x, y) => `${x}\r\n${y}`) : "";
+
         const md = 
 `---
 img: /${tweet.localPath}
-imgDescription: ${tweet.fullText}
+imgDescription: ${tweet.fullText.replace(/\r/g, " ").replace(/\n/g , "")}
 tags: 
     - alles
 ${hashTagStr}
 ---
         `;
-        fs.writeFileSync(`./views/images/${tweet.id.toString()}.md`, md);
+        fs.writeFileSync(`./views/imageViews/${tweet.id.toString()}.md`, md);
     });
 }
 

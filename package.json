@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "11ty": "npm run twitter && eleventy",
-    "11ty-serve": "npm run twitter && cross-env SASSWATCH=1 eleventy --serve",
-    "twitter": "node build/twitter.js"
+    "11ty": "eleventy",
+    "11ty-serve": "cross-env SASSWATCH=1 eleventy --serve",
+    "twitter": "node build/twitter.js",
+    "zip": "node ./build/zip.js",
+    "upload": "node ./build/upload.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +22,10 @@
   "homepage": "https://github.com/gabbersepp/kack_dev#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
+    "archiver": "^3.1.1",
     "cross-env": "^7.0.0",
     "fs-extra": "^8.1.0",
+    "request": "^2.88.2",
     "sass": "^1.25.0",
     "tweet-downloader": "1.0.1"
   }
