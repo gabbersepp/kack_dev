@@ -21,12 +21,12 @@
   },
   "homepage": "https://github.com/gabbersepp/kack_dev#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "archiver": "^3.1.1",
-    "cross-env": "^7.0.0",
-    "fs-extra": "^8.1.0",
-    "request": "^2.88.2",
-    "sass": "^1.25.0",
+    "@11ty/eleventy": "0.10.0",
+    "archiver": "3.1.1",
+    "cross-env": "7.0.0",
+    "fs-extra": "8.1.0",
+    "request": "2.88.2",
+    "sass": "1.25.0",
     "tweet-downloader": "1.0.2"
   }
 }
