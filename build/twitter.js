@@ -53,7 +53,7 @@ async function twitter() {
         const md = 
 `---
 img: /${tweet.localPath}
-imgDescription: ${tweet.fullText.replace(/\r/g, " ").replace(/\n/g , "")}
+imgDescription: ${tweet.fullText.replace(/\r/g, " ").replace(/\n/g , "").replace(":", "-")}
 date: ${formatDate(new Date(parseInt((BigInt(tweet.id) / BigInt(100000)).toString())))}
 tags: 
     - alles
