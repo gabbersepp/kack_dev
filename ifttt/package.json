@@ -6,6 +6,6 @@
   "scripts": {},
   "devDependencies": {
     "express": "4.17.1",
-    "twitter-lite": "0.9.4"
+    "twitter-lite": "0.14.0"
   }
 }
