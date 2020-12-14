@@ -9,6 +9,6 @@ spec:
   capacity:
     storage: 1Gi
   accessModes:
-    - Read
+    - ReadOnlyMany
   hostPath:
     path: "/etc/letsencrypt/live/h5b.de"
