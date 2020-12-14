@@ -22,4 +22,4 @@ spec:
         - containerPort: 80
         volumeMounts:
         - mountPath: /etc/letsencrypt/live/h5b.de
-          name: cert-pv-claim
+          name: cert-pv-storage
