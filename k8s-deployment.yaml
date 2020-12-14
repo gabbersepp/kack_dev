@@ -16,3 +16,6 @@ spec:
         image: gabbersepp/kackdev
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/etc/letsencrypt/live/h5b.de"
+          name: cert-pv-storage
