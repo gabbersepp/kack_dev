@@ -3,6 +3,10 @@ kind: Deployment
 metadata:
   name: kackdev
 spec:
+  volumes:
+    - name: cert-pv-storage
+      persistentVolumeClaim:
+        claimName: cert-pv-claim
   selector:
     matchLabels:
       app: kackdev
