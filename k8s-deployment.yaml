@@ -3,10 +3,6 @@ kind: Deployment
 metadata:
   name: kackdev
 spec:
-  volumes:
-    - name: cert-pv-storage
-      persistentVolumeClaim:
-        claimName: cert-pv-claim
   selector:
     matchLabels:
       app: kackdev
@@ -21,5 +17,5 @@ spec:
         ports:
         - containerPort: 80
         volumeMounts:
-        - mountPath: "/etc/letsencrypt/live/h5b.de"
-          name: cert-pv-storage
+        - mountPath: /etc/letsencrypt/live/h5b.de
+          name: cert-pv-claim
