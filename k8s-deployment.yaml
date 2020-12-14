@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kack.dev
+  name: kackdev
 spec:
   selector:
     matchLabels:
-      app: kack.dev
+      app: kackdev
   template:
     metadata:
       labels:
-        app: kack.dev
+        app: kackdev
     spec:
       containers:
-      - name: kack.dev
-        image: gabbersepp/kack.dev
+      - name: kackdev
+        image: gabbersepp/kackdev
         ports:
         - containerPort: 80

@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: kack.dev-ingress
+  name: kackdev-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /
@@ -11,5 +11,5 @@ spec:
       paths:
         - path: /kackdev
           backend:
-            serviceName: kack.dev-service
+            serviceName: kackdev-service
             servicePort: 80
