@@ -11,15 +11,8 @@ spec:
       labels:
         app: kackdev
     spec:
-      volumes:
-        - name: cert-pv-storage
-          persistentVolumeClaim:
-            claimName: cert-pv-claim
       containers:
       - name: kackdev
         image: gabbersepp/kackdev
         ports:
         - containerPort: 80
-        volumeMounts:
-        - mountPath: /etc/letsencrypt/live/h5b.de
-          name: cert-pv-storage
