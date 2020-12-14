@@ -7,9 +7,10 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - http:
+  - host: kack.dev
+    http:
       paths:
-        - path: /kackdev
+        - path: /
           backend:
             serviceName: kackdev-service
             servicePort: 80
