@@ -1,11 +1,21 @@
-FROM node:12.18.1
-ENV NODE_ENV=production
+
+FROM node:12.18.1 as node
+
+ARG TWTR_CKEY
+ARG TWTR_CSECRET
+ARG TWTR_ATOKEN
+ARG TWTR_ASECRET
+
+ENV TWTR_CKEY=$TWTR_CKEY
+ENV TWTR_CSECRET=$TWTR_CSECRET
+ENV TWTR_ATOKEN=$TWTR_ATOKEN
+ENV TWTR_ASECRET=$TWTR_ASECRET
+
 WORKDIR /
-COPY ["package.json", "package-lock.json*", "./"]
-RUN npm install --production
 COPY . .
-RUN bash -c "npm run 11ty"
+RUN npm install
+RUN npm run twitter 2>&1 | tee out.txt && \
+    npm run 11ty
 
 FROM nginx
-COPY dist /usr/share/nginx/html
-
+COPY --from=node /dist /usr/share/nginx/html
