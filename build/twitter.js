@@ -35,8 +35,8 @@ async function twitter() {
         maxId = tweets.map(x => x.id).reduce((x, y) => x > y ? x : y);
     }
     
-    tweets = await tweetDownloader.getLatestEarningsPost(maxId.toString(), "KackDev", path.join("images"),
-        process.env.TWTR_CKEY, process.env.TWTR_CSECRET, process.env.TWTR_ATOKEN, process.env.TWTR_ASECRET);
+    tweets = await tweetDownloader.getLatestTweets(maxId.toString(), "KackDev", path.join("app", "images"),
+        process.env.TWTR_CKEY, process.env.TWTR_CSECRET, process.env.TWTR_ATOKEN, process.env.TWTR_ASECRET, 200);
     
     tweetDownloader.mergeAndWriteWithExisting(path.join("app", "tweets.json"), tweets);
 
