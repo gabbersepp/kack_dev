@@ -11,11 +11,17 @@ ENV TWTR_CSECRET=$TWTR_CSECRET
 ENV TWTR_ATOKEN=$TWTR_ATOKEN
 ENV TWTR_ASECRET=$TWTR_ASECRET
 
-WORKDIR /
-COPY . .
+RUN mkdir kackdev
+COPY "./app" "./kackdev/app"
+COPY "./build" "./kackdev/build"
+COPY "./k8s" "./kackdev/k8s"
+COPY "package.json" "./kackdev/"
+COPY "package-lock.json" "./kackdev/"
+
+WORKDIR /kackdev/
 RUN npm install
-RUN npm run twitter 2>&1 | tee out.txt && \
-    npm run 11ty
+RUN npm run twitter 2>&1 | tee out_twitter.txt && \
+    npm run 11ty 2>&1 | tee out_11ty.txt
 
 FROM nginx
-COPY --from=node /dist /usr/share/nginx/html
+COPY --from=node /kackdev/app/dist /usr/share/nginx/html

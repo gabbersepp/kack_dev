@@ -64,7 +64,7 @@ module.exports = function(eleventyConfig) {
 
 
   eleventyConfig.addPassthroughCopy({ "app/assets": "./assets" });
-  eleventyConfig.addPassthroughCopy({ "app/images": "./images" });
+  eleventyConfig.addPassthroughCopy({ "app/images": "./app/images" });
 
   sass(path.join(cwd(), "app", "styles", "index.scss"), path.join(cwd(), "app", "dist", "index.css"));
 
