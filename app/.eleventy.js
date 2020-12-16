@@ -1,5 +1,7 @@
 const fs = require("fs");
-const sass = require("./build/sass-process");
+const path = require("path");
+const { cwd } = require("process");
+const sass = require(path.join(cwd(), "build", "sass-process"));
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('markdown', function(value) {
@@ -61,16 +63,16 @@ module.exports = function(eleventyConfig) {
   });
 
 
-  eleventyConfig.addPassthroughCopy("./assets");
-  eleventyConfig.addPassthroughCopy("./images");
+  eleventyConfig.addPassthroughCopy({ "app/assets": "./assets" });
+  eleventyConfig.addPassthroughCopy({ "app/images": "./images" });
 
-  sass('./styles/index.scss', './dist/index.css');
+  sass(path.join(cwd(), "app", "styles", "index.scss"), path.join(cwd(), "app", "dist", "index.css"));
 
   return {
     dir: {
-      input: "./views",
-      output: "./dist",
-      includes: "../_includes"
+      input: path.join("app", "views"),
+      output: "app/dist",
+      includes: path.join("..", "_includes")
     }
   }
 }

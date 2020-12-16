@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "11ty": "eleventy",
-    "11ty-serve": "cross-env SASSWATCH=1 eleventy --serve",
-    "twitter": "node build/twitter.js",
-    "zip": "node ./build/zip.js",
-    "upload": "node ./build/upload.js"
+    "11ty": "eleventy --config=app/.eleventy.js",
+    "11ty-serve": "cross-env SASSWATCH=1 eleventy --serve --config=app/.eleventy.js",
+    "twitter": "node build/twitter.js"
   },
   "repository": {
     "type": "git",
