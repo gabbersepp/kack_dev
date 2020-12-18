@@ -1,14 +1,9 @@
-language: node_js
+language: ruby
 
-cache:
-  directories:
-    - ~/.npm
+services:
+  docker
 
-node_js:
-  - '12'
-
-script:
-  - npm run twitter
-  - npm run 11ty
-  - npm run zip
-  - npm run upload
+before_install:
+  docker build -t gabbersepp/kackdev
+  echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  docker push gabbersepp/kackdev:latest
