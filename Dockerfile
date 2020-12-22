@@ -14,7 +14,6 @@ ENV TWTR_ASECRET=$TWTR_ASECRET
 RUN mkdir kackdev
 COPY "./app" "./kackdev/app"
 COPY "./build" "./kackdev/build"
-COPY "./k8s" "./kackdev/k8s"
 COPY "package.json" "./kackdev/"
 COPY "package-lock.json" "./kackdev/"
 
