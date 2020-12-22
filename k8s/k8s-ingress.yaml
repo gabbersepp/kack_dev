@@ -18,3 +18,14 @@ spec:
           backend:
             serviceName: kackdev-service
             servicePort: 80
+  - host: www.kack.dev
+    http:
+      paths:
+        - path: /idptest
+          backend:
+            serviceName: kackdev-idp-service
+            servicePort: 80
+        - path: /
+          backend:
+            serviceName: kackdev-service
+            servicePort: 80
