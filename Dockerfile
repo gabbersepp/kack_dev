@@ -1,5 +1,5 @@
 
-FROM node:12.18.1 as node
+FROM node:12.20.2 as node
 
 ARG TWTR_CKEY
 ARG TWTR_CSECRET
