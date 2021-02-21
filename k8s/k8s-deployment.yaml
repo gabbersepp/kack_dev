@@ -13,6 +13,7 @@ spec:
     spec:
       containers:
       - name: kackdev
-        image: gabbersepp/kackdev
+        image: ghcr.io/gabbersepp/kackdev
+        imagePullPolicy: Always
         ports:
         - containerPort: 80

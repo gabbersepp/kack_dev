@@ -1,4 +1,3 @@
-const fs = require("fs");
 const path = require("path");
 const { cwd } = require("process");
 const sass = require(path.join(cwd(), "build", "sass-process"));
