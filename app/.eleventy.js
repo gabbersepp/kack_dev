@@ -12,7 +12,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addCollection("allTags", (collection) => {
     var tags = collection.items.map(x => x.data)
-      .filter(x => x.tags).map(x => x.tags).reduce((x, y) => [...x, ...y]);
+      .filter(x => x.tags).map(x => x.tags).reduce((x, y) => [...x, ...y], []);
     var obj = {};
     tags.forEach(t => obj[t] = (obj[t] || 0) + 1);
     const tagsSortedByUsage = Object.keys(obj).sort((a, b) => obj[b] - obj[a]);
@@ -69,9 +69,9 @@ module.exports = function(eleventyConfig) {
 
   return {
     dir: {
-      input: path.join("app", "views"),
+      input: "app/views",
       output: "app/dist",
-      includes: path.join("..", "_includes")
+      includes: "../_includes"
     }
   }
 }
