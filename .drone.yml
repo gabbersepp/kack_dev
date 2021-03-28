@@ -26,6 +26,7 @@ steps:
     - master
     event:
     - push
+    - cron
 
 - name: docker
   image: plugins/docker
@@ -40,6 +41,7 @@ steps:
     - master
     event:
     - push
+    - cron
 
 - name: deploy
   image: gabbersepp/drone-kubectl
@@ -59,3 +61,4 @@ steps:
     - master
     event:
     - push
+    - cron
