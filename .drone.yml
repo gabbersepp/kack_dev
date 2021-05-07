@@ -3,13 +3,13 @@ type: kubernetes
 name: kackdev
 steps:
 - name: install
-  image: node:12
+  image: node:16
   commands:
     - set -e
     - npm install
 
 - name: twitter
-  image: node:12
+  image: node:16
   commands:
     - npm run twitter 
   environment:
