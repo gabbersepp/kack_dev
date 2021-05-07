@@ -22,7 +22,7 @@
     "@11ty/eleventy": "0.11.1",
     "cross-env": "7.0.3",
     "request": "2.88.2",
-    "sass": "1.32.8",
+    "sass": "1.32.12",
     "tweet-downloader": "1.3.5"
   }
 }
