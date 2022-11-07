@@ -26,7 +26,7 @@ spec:
             service:
               name: kackdev-service
               port: 
-                name: 80
+                number: 80
   - host: www.kack.dev
     http:
       paths:
