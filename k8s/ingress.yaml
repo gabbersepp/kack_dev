@@ -1,31 +1,46 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: kackdev-ingress
   annotations:
-    kubernetes.io/ingress.class: nginx
-    #nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: lets-encrypt
 spec:
+  tls:
+  - hosts:
+    - kack.dev
+    secretName: kackdev-ingress-tls
   rules:
   - host: kack.dev
     http:
       paths:
         - path: /idptest
+          pathType: ImplementationSpecific
           backend:
-            serviceName: kackdev-idp-service
-            servicePort: 80
+            service:
+              name: kackdev-idp-service
+              port: 
+                number: 80
         - path: /
+          pathType: ImplementationSpecific
           backend:
-            serviceName: kackdev-service
-            servicePort: 80
+            service:
+              name: kackdev-service
+              port: 
+                name: 80
   - host: www.kack.dev
     http:
       paths:
         - path: /idptest
+          pathType: ImplementationSpecific
           backend:
-            serviceName: kackdev-idp-service
-            servicePort: 80
+            service:
+              name: kackdev-idp-service
+              port: 
+                number: 80
         - path: /
+          pathType: ImplementationSpecific
           backend:
-            serviceName: kackdev-service
-            servicePort: 80
+            service:
+              name: kackdev-service
+              port: 
+                number: 80
